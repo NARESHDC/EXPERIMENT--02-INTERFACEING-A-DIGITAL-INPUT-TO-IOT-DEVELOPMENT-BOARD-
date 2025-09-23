@@ -1,8 +1,8 @@
-###  DATE: 
+###  DATE: 23.09.2025
 
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT: 
+###  NAME: NARESH M
+###  ROLL NO : 212223220064
+###  DEPARTMENT: IT
 
 
 # EXPERIMENT--02-INTERFACING-A-DIGITAL-INPUT-TO-IOT-DEVELOPMENT-BOARD-
@@ -77,12 +77,38 @@ The full form of an ARM is an advanced reduced instruction set computer (RISC) m
 
 
 ## STM 32 CUBE PROGRAM :
+```
 
+
+while (1)
+ {
+   IRsensor();
+ }
+ /* USER CODE END 3 */
+}
+void IRsensor()
+{
+   IRsensorop=HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_3);
+   if (IRsensorop==1)
+   	{
+   	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_0,GPIO_PIN_SET);
+   	HAL_Delay(500);
+   	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_0,GPIO_PIN_RESET);
+   	HAL_Delay(500);
+}
+else
+{
+   HAL_GPIO_WritePin(GPIOA,GPIO_PIN_0,GPIO_PIN_RESET);
+}
+}
+```
 
 
 ## Output  :
- 
- 
+ ## LED OFF
+ <img width="586" height="412" alt="image" src="https://github.com/user-attachments/assets/3bc00920-b6b0-49de-9b66-1bda6616e620" />
+
+ ## LED ON
  
  
 ## Result :
